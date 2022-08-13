@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyPageFragment">
+    android:background="@color/mainBackgroundColor"
+    tools:context=".UpdatePlanFragment">
 
-    <TextView
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mypage_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        />
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/create_mypage_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="7dp"
+            android:rotation="180"
+            android:src="@drawable/activitiy_login_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개인정보 관리"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mypage_linear"
+        android:layout_width="413dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="65dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/mypage_profile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="50dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/mypage_profile" />
+
+        <TextView
+            android:id="@+id/mypage_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="신미림"
+            android:textStyle="bold"
+            android:textColor="#3F3F3F"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/mypage_id_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tlsalfla96"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#858585"/>
+
+        <Button
+            android:id="@+id/mupage_logout_btn"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:text="로그아웃"
+            android:textColor="#4B77F2"
+            android:textStyle="bold"
+            android:backgroundTint="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/mypage_dropout_btn"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="탈퇴하기"
+            android:textColor="#4B77F2"
+            android:textStyle="bold"
+            android:backgroundTint="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/mypage_ask_btn"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="문의하기"
+            android:textColor="#4B77F2"
+            android:textStyle="bold"
+            android:backgroundTint="#FFFFFF"/>
+
+
+
+
+
+    </LinearLayout>
+
 
 </FrameLayout>
