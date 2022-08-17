@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeTuning_hackathon">
         <activity
+            android:name=".InviteDialog"
+            android:exported="false" />
+        <activity
+            android:name=".GuideActivty"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InputTime"
+            android:exported="false" />
+        <activity
             android:name=".PlanInfoActivity"
             android:exported="false" />
         <activity
@@ -17,27 +32,17 @@
             android:exported="false" />
         <activity
             android:name=".CreateTuningPage"
-            android:exported="false"></activity>
-
-
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:theme="@style/SplashTheme">
-
-        </activity>
+            android:exported="true"
+            android:theme="@style/SplashTheme"></activity>
     </application>
 
 </manifest>

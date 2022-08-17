@@ -59,74 +59,148 @@
         android:background="@color/mainLineColor"
         app:layout_constraintTop_toBottomOf="@id/planInfo_top_bar" />
 
-
-    <TextView
-        android:id="@+id/planInfo_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="30dp"
-        android:background="@color/transparent"
-        android:textColor="#000000"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/planInfo_line_view"></TextView>
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/planInfo_color_picker"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/color_item_one"
-        android:backgroundTint="#99C0F6"
-        app:layout_constraintBottom_toBottomOf="@id/planInfo_title_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/planInfo_title_tv" />
-
-    <TextView
-        android:id="@+id/planInfo_describe_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/transparent"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/planInfo_title_tv"
-        app:layout_constraintTop_toBottomOf="@id/planInfo_title_tv" />
-
-
-    <View
-        android:id="@+id/planInfo_second_line_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/mainLineColor"
-        app:layout_constraintTop_toBottomOf="@id/planInfo_describe_tv" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/planInfo_line_btm_view"
+        app:layout_constraintTop_toBottomOf="@id/planInfo_line_view">
 
-    <TextView
-        android:id="@+id/planInfo_when_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="언제"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/planInfo_title_tv"
-        app:layout_constraintTop_toBottomOf="@id/planInfo_second_line_view" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/planINfo_selected_date_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/planInfo_when_tv"
-        tools:listitem="@layout/create_selected_date_rv_item" />
+            <TextView
+                android:id="@+id/planInfo_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/transparent"
+                android:textColor="#000000"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/planInfo_color_picker"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/color_item_one"
+                android:backgroundTint="#99C0F6"
+                app:layout_constraintBottom_toBottomOf="@id/planInfo_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/planInfo_title_tv" />
+
+            <TextView
+                android:id="@+id/planInfo_describe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@color/transparent"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/planInfo_title_tv"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_title_tv" />
+
+
+            <View
+                android:id="@+id/planInfo_second_line_view"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="40dp"
+                android:background="@color/mainLineColor"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_describe_tv" />
+
+            <TextView
+                android:id="@+id/planInfo_when_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="언제"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/planInfo_title_tv"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_second_line_view" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/planINfo_selected_date_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_when_tv"
+                tools:listitem="@layout/create_selected_date_rv_item" />
+
+            <TextView
+                android:id="@+id/planInfo_invite_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="친구초대"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/planInfo_title_tv"
+                app:layout_constraintTop_toBottomOf="@id/planINfo_selected_date_rv" />
+
+            <EditText
+                android:id="@+id/planInfo_invite_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/et_round_corner"
+                android:hint=" 아이디로 초대하세요"
+                android:padding="15dp"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_invite_tv" />
+
+
+            <TextView
+                android:id="@+id/planInfo_search_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="검색"
+                android:textColor="@color/appMainColor"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/planInfo_invite_et"
+                app:layout_constraintEnd_toEndOf="@+id/planInfo_invite_et"
+                app:layout_constraintTop_toTopOf="@+id/planInfo_invite_et" />
+
+            <TextView
+                android:id="@+id/planInfo_participants_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="참여자"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/planInfo_invite_tv"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_invite_et" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/planInfo_participants_rv"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/participants_rv_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/planInfo_participants_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <View
         android:id="@+id/planInfo_line_btm_view"

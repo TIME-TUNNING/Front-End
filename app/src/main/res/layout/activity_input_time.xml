@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackgroundColor"
+    tools:context=".InputTime">
+
+    <!-- 상단 바 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputTime_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일정 입력"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/inputTime_back_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="7dp"
+            android:rotation="180"
+            android:src="@drawable/btn_arrow_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inputTime_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="확인"
+            android:textColor="@color/appMainColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/inputTime_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/mainLineColor"
+        app:layout_constraintTop_toBottomOf="@id/inputTime_top_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/create_selected_date_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/inputTime_line_view"
+        tools:listitem="@layout/input_time_date_rv_item" />
+
+
+    <View
+        android:id="@+id/inputTime_second_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/mainLineColor"
+        app:layout_constraintTop_toBottomOf="@id/create_selected_date_rv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.kmj.timetuning_hackathon
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,15 @@ class PlanInfoActivity:AppCompatActivity(){
             finish()
         }
 
+        // 검색 버튼 클릭
+        binding.planInfoSearchTv.setOnClickListener {
+            val inputUser:String = binding.planInfoInviteEt.text.toString()
+            val dialog = InviteDialog(inputUser)
+            // 알림창이 띄워져있는 동안 배경 클릭 막기
+            dialog.isCancelable = false
+            dialog.show(this.supportFragmentManager, "InputDialog")
+        }
+
         // 일정확정하기 버튼
         binding.planInfoConfirmBtn.setOnClickListener {
             val dialog = PlanInfoDialog(newSchedule.id)
@@ -35,8 +45,16 @@ class PlanInfoActivity:AppCompatActivity(){
             dialog.isCancelable = false
             dialog.show(this.supportFragmentManager, "ConfirmDialog")
         }
-    }
 
+        // 시간 입력하기 버튼
+        binding.planInfoInputTimeBtn.setOnClickListener {
+            val intent= Intent(this,InputTime::class.java)
+            val gson = Gson()
+            val newScheduleJson = gson.toJson(newSchedule)
+            intent.putExtra("newSchedule", newScheduleJson)
+            startActivity(intent)
+        }
+    }
     // 화면 최초 지정
     private fun setInit(newSchedule: NewSchedule){
 

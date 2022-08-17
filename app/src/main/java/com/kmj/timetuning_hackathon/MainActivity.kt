@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         val main_bnv = findViewById<BottomNavigationView>(R.id.main_bnv)
 
+        //main_bnv.itemIconTintList=null
 
         //update_btn = fragment_schedulecheck.findViewById(R.id.btn_update_plan_button)
 
@@ -50,26 +51,26 @@ class MainActivity : AppCompatActivity() {
             changeFragment(
                 when (item.itemId) {
                     R.id.updateplan -> {
-                        main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
-                        main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
+                        //main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
+                        //main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
                         UpdatePlanFragment()
                         // Respond to navigation item 1 click
                     }
                     R.id.schedulecheck -> {
-                        main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
-                        main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
+                        //main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
+                        //main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
                         ScheduleCheckFragment()
                         // Respond to navigation item 2 click
                     }
                     R.id.mypage -> {
-                        main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
-                        main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
+                       // main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
+                       // main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
                         MyPageFragment()
                         // Respond to navigation item 3 click
                     }
                     else -> {
-                        main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
-                        main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
+                      //  main_bnv.itemIconTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
+                      //  main_bnv.itemTextColor = ContextCompat.getColorStateList(this, R.color.purple_700)
                         UpdatePlanFragment()
                     }
                 }
