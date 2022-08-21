@@ -13,6 +13,10 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+
+        // 스플래쉬 화면 설정
+        setTheme(R.style.Theme_TimeTuning_hackathon)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -47,7 +51,10 @@ class LoginActivity : AppCompatActivity() {
         user?.let {
             Log.d("LOGIN_ACT/GET_USER","userId : ${user.number}, $user")
             saveJwt(user.number)
+
+            Toast.makeText(this,"반가워요!",Toast.LENGTH_SHORT).show()
             startMainActivity()
+        return
         }
         Toast.makeText(this,"회원 정보가 존재하지 않습니다.",Toast.LENGTH_SHORT).show()
 
@@ -63,7 +70,8 @@ class LoginActivity : AppCompatActivity() {
 
     //로그인시 메인 화면으로
     private fun startMainActivity(){
-        val intent = Intent(this, MainActivity::class.java )
+        //val intent = Intent(this, MainActivity::class.java )
+        val intent = Intent(this, GuideActivty::class.java )
         startActivity(intent)
     }
 

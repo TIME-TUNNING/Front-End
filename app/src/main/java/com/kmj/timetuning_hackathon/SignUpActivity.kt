@@ -33,7 +33,7 @@ class SignUpActivity : AppCompatActivity(){
         val password : String = binding.signUpPwdEt.text.toString()
 
 
-        return User(id,name,password)
+        return User(id,password,name)
     }
 
     //회원가입 진행 함수
