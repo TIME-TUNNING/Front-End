@@ -1,5 +1,6 @@
 
 ## ⏰ 타임튜닝을 소개합니다!
+![image](https://github.com/TIME-TUNNING/Front-End-Android/assets/90263843/b73e62e8-26e6-4cde-9494-368a824a5aed)
 
 
 ## 서비스 소개
